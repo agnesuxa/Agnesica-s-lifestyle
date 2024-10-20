@@ -18,13 +18,17 @@
   const MAPTILER_KEY = 'HiFnxEbD15gcZq10xT1I';
   const map = new maplibregl.Map({
       style: `https://api.maptiler.com/maps/basic-v2/style.json?key=${MAPTILER_KEY}`,
-      center: [44.42063307702695, 26.133994640204843],
-      zoom: 15.5,
-      pitch: 45,
-      bearing: -17.6,
+      center: [26.0963, 44.4408],
+      zoom: 15,
+      pitch: 60,
+      bearing: 0,
       container: 'map',
       antialias: true
   });
+
+  const marker = new maplibregl.Marker()
+    .setLngLat([26.0963, 44.4408]) // SERAFIM coordinates
+    .addTo(map);
 
   // The 'building' layer in the streets vector source contains building-height
   // data from OpenStreetMap.
